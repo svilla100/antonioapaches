@@ -1,0 +1,1044 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Antonian Senior Family Tailgate 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --red:#D21112;
+    --red-deep:#96090A;
+    --gray:#2A2A30;
+    --ink:#17171B;
+    --good:#2A2A30;
+    --rule:#FFFFFF;
+    --paper:#F1F1F3;
+    --card:#FFFFFF;
+    --line:#DDDDE2;
+    --muted:#6C6C74;
+    --display:"Oswald","Arial Narrow",Impact,sans-serif;
+    --body:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:var(--body);
+    font-size:16px;
+    line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:780px;margin:0 auto;padding:0 16px 64px}
+
+  /* ---------- Header ---------- */
+  header{
+    background:
+      linear-gradient(180deg,rgba(255,255,255,.06),rgba(0,0,0,.25)),
+      var(--red);
+    color:#fff;
+    position:relative;
+    overflow:hidden;
+    border-bottom:5px solid var(--rule);
+  }
+  header::after{
+    content:"";position:absolute;inset:0;
+    background:repeating-linear-gradient(90deg,transparent 0 62px,rgba(255,255,255,.055) 62px 64px);
+    pointer-events:none;
+  }
+  .head-in{
+    max-width:780px;margin:0 auto;padding:26px 16px 22px;
+    display:flex;gap:16px;align-items:center;position:relative;z-index:1;
+  }
+  .crest{
+    flex:0 0 auto;width:82px;height:82px;border-radius:12px;overflow:hidden;
+    box-shadow:0 3px 10px rgba(0,0,0,.3);border:2px solid rgba(255,255,255,.85);
+  }
+  .crest img{width:100%;height:100%;object-fit:cover;display:block}
+  .eyebrow{
+    font-family:var(--display);font-weight:500;font-size:12px;letter-spacing:.22em;
+    text-transform:uppercase;color:#8FD3E2;margin:0 0 2px;
+  }
+  h1{
+    font-family:var(--display);font-weight:700;text-transform:uppercase;
+    letter-spacing:.01em;line-height:.98;margin:0;
+    font-size:clamp(27px,7.4vw,42px);
+  }
+  h1 em{font-style:normal;color:#59BED2;display:block}
+  .sub{margin:8px 0 0;font-size:13.5px;color:#F6C9CF;max-width:44ch}
+
+  /* ---------- Toolbar ---------- */
+  .bar{
+    background:var(--ink);color:#D8D8DD;font-size:12.5px;
+    padding:9px 0;border-bottom:1px solid rgba(255,255,255,.12);
+  }
+  .bar-in{max-width:780px;margin:0 auto;padding:0 16px;display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+  .bar strong{color:#fff;font-weight:600}
+  .bar .spacer{flex:1}
+  .linkbtn{
+    background:transparent;border:1px solid rgba(255,255,255,.28);color:#E4E4E9;
+    font-family:var(--body);font-size:12px;font-weight:600;border-radius:999px;
+    padding:5px 11px;cursor:pointer;
+  }
+  .linkbtn:hover{background:rgba(255,255,255,.1);color:#fff}
+
+  /* ---------- Cards ---------- */
+  .game{
+    background:var(--card);border:1px solid var(--line);border-radius:14px;
+    margin-top:20px;overflow:hidden;box-shadow:0 1px 2px rgba(0,0,0,.07);
+  }
+  .game-head{padding:16px 18px 12px;border-bottom:1px solid var(--line)}
+  .game-top{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+  .gnum{
+    font-family:var(--display);font-size:12px;font-weight:600;letter-spacing:.16em;
+    text-transform:uppercase;color:var(--muted);
+  }
+  .opp{
+    font-family:var(--display);font-weight:600;text-transform:uppercase;
+    font-size:clamp(19px,4.6vw,25px);line-height:1.1;margin:2px 0 0;width:100%;
+  }
+  .when{font-size:13px;color:var(--muted);margin:4px 0 0}
+  .when .dot{margin:0 6px;opacity:.5}
+
+  /* yard bar */
+  .yard{display:flex;gap:3px;margin:14px 0 8px}
+  .yard i{
+    flex:1;height:9px;background:#E4E4E9;border-radius:2px;
+    box-shadow:inset 0 0 0 1px rgba(0,0,0,.06);
+  }
+  .yard i.on{background:var(--gray)}
+  .yard i.meat{background:var(--red)}
+  .status{display:flex;gap:8px;flex-wrap:wrap;align-items:center;font-size:12.5px}
+  .chip{
+    display:inline-flex;align-items:center;gap:6px;border-radius:999px;
+    padding:3px 10px;font-weight:600;font-size:12px;
+  }
+  .chip.count{background:#ECECEF;color:var(--gray)}
+  .chip.need{background:#FBE3E7;color:var(--red-deep)}
+  .chip.set{background:#ECECEF;color:var(--good)}
+  .chip.full{background:var(--good);color:#fff}
+
+  /* ---------- Slot groups ---------- */
+  .group-label{
+    display:flex;align-items:center;gap:9px;
+    font-family:var(--display);font-size:12.5px;font-weight:600;letter-spacing:.17em;
+    text-transform:uppercase;padding:14px 18px 8px;
+  }
+  .group-label .rule{flex:1;height:1px;background:var(--line)}
+  .grill{background:linear-gradient(180deg,#FDF2F4,#FFFFFF)}
+  .grill .group-label{color:var(--red-deep);padding-top:16px}
+  .grill .rule{background:#F3C9D0}
+  .sides .group-label{color:var(--muted)}
+
+  ul.slots{list-style:none;margin:0;padding:0 12px 6px}
+  .grill ul.slots{padding-bottom:14px}
+  .sides ul.slots{padding-bottom:16px}
+
+  .slot{
+    display:flex;gap:12px;align-items:flex-start;width:100%;text-align:left;
+    background:transparent;border:1px solid transparent;border-radius:11px;
+    padding:11px 12px;font-family:var(--body);font-size:15px;color:var(--ink);
+    cursor:pointer;
+  }
+  .slot:hover{background:#F5F5F8}
+  .slot:focus-visible{outline:3px solid var(--red);outline-offset:1px}
+  .slot .num{
+    flex:0 0 26px;height:26px;border-radius:7px;display:grid;place-items:center;
+    font-family:var(--display);font-size:13px;font-weight:600;
+    background:#ECECEF;color:var(--gray);margin-top:1px;
+  }
+  .slot .body{flex:1;min-width:0}
+  .slot .role{font-weight:600;font-size:14.5px;line-height:1.3}
+  .slot .hint{font-size:12.5px;color:var(--muted);margin-top:2px}
+  .slot .taken{font-size:13.5px;margin-top:3px;line-height:1.35}
+  .slot .taken b{color:var(--gray)}
+  .slot .open{font-size:13px;color:var(--red-deep);font-weight:600;margin-top:3px}
+  .slot .act{
+    flex:0 0 auto;align-self:center;font-size:12px;font-weight:700;
+    color:var(--gray);border:1px solid var(--line);border-radius:999px;padding:4px 10px;
+    background:#fff;white-space:nowrap;
+  }
+  .slot.filled .act{color:var(--muted);font-weight:600}
+
+  .grill .slot{border-color:#F1C2CA;background:#fff;margin-bottom:8px}
+  .grill .slot:last-child{margin-bottom:0}
+  .grill .slot .num{background:var(--red);color:#fff}
+  .grill .slot .open{color:var(--red-deep)}
+  .grill .slot:hover{background:#FFF7F8;border-color:#E59AA6}
+  .grill .slot .act{border-color:#EDB6BF;color:var(--red-deep)}
+  .slot.filled .num{background:var(--gray);color:#fff}
+  .grill .slot.filled{border-color:#E3DCDD;background:#FAF8F8}
+  .grill .slot.filled .num{background:var(--red-deep)}
+
+  .tag{
+    display:inline-flex;align-items:center;border-radius:999px;padding:3px 10px;
+    font-family:var(--display);font-size:11px;font-weight:600;letter-spacing:.14em;
+    text-transform:uppercase;border:1.5px solid var(--red);color:var(--red-deep);
+    white-space:nowrap;vertical-align:middle;
+  }
+  .tag.pink{border-color:#E0559B;color:#C4287D;background:#FDF0F7}
+
+  /* ---------- Dashboard ---------- */
+  .dash-head{
+    display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin:22px 0 0;
+  }
+  .dash-head h2{
+    font-family:var(--display);text-transform:uppercase;font-size:19px;font-weight:600;margin:0;letter-spacing:.02em;
+  }
+  .dash-head span{font-size:12.5px;color:var(--muted)}
+  .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px;margin-top:12px}
+  .stat{
+    background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 12px 11px;
+  }
+  .stat b{
+    display:block;font-family:var(--display);font-size:26px;font-weight:600;line-height:1;color:var(--ink);
+  }
+  .stat b.warn{color:var(--red)}
+  .stat span{display:block;font-size:11.5px;color:var(--muted);margin-top:5px;line-height:1.3}
+  @media (max-width:560px){.stats{grid-template-columns:repeat(2,1fr)}}
+
+  .alert{
+    background:#FBE3E7;border:1px solid #F1C2CA;border-radius:12px;padding:13px 15px;margin-top:14px;
+    font-size:13.5px;color:var(--red-deep);line-height:1.5;
+  }
+  .alert b{display:block;font-family:var(--display);text-transform:uppercase;letter-spacing:.12em;font-size:11.5px;margin-bottom:5px}
+
+  .dcard{
+    background:var(--card);border:1px solid var(--line);border-radius:14px;margin-top:14px;
+    overflow:hidden;box-shadow:0 1px 2px rgba(0,0,0,.07);
+  }
+  .dcard-top{
+    display:flex;gap:10px;align-items:center;flex-wrap:wrap;
+    padding:13px 16px;border-bottom:1px solid var(--line);
+  }
+  .dcard-top h3{
+    font-family:var(--display);text-transform:uppercase;font-size:16.5px;font-weight:600;margin:0;flex:1;min-width:150px;
+  }
+  .dcard-top .when{margin:0;font-size:12.5px}
+  .dgrid{display:grid;grid-template-columns:1fr 1fr;gap:0}
+  .dcol{padding:13px 16px 15px}
+  .dcol+.dcol{border-left:1px solid var(--line)}
+  @media (max-width:560px){.dgrid{grid-template-columns:1fr}.dcol+.dcol{border-left:0;border-top:1px solid var(--line)}}
+  .dcol h4{
+    font-family:var(--display);font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;
+    margin:0 0 9px;color:var(--muted);font-weight:600;
+  }
+  .dcol.meat h4{color:var(--red-deep)}
+  .dlist{list-style:none;margin:0;padding:0;font-size:13.5px;line-height:1.45}
+  .dlist li{padding:5px 0;border-bottom:1px dashed #E8E8ED}
+  .dlist li:last-child{border-bottom:0}
+  .dlist b{color:var(--ink)}
+  .dlist .who{color:var(--muted);font-size:12.5px}
+  .dlist .gap{color:var(--red-deep);font-weight:600}
+  .dlist .gap.quiet{color:var(--muted);font-weight:500}
+
+  /* ---------- Modal ---------- */
+  .veil{
+    position:fixed;inset:0;background:rgba(12,26,49,.55);display:none;
+    align-items:flex-end;justify-content:center;z-index:50;padding:0;
+  }
+  .veil.on{display:flex}
+  .sheet{
+    background:#fff;width:100%;max-width:480px;border-radius:16px 16px 0 0;
+    padding:20px 18px calc(20px + env(safe-area-inset-bottom));
+    max-height:92vh;overflow:auto;
+  }
+  .sheet h2{font-family:var(--display);text-transform:uppercase;font-size:20px;margin:0 0 2px;font-weight:600}
+  .sheet .ctx{font-size:13px;color:var(--muted);margin:0 0 16px}
+  label{display:block;font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin:13px 0 5px}
+  input[type=text],input[type=date],input[type=time],input[type=tel],input[type=number]{
+    width:100%;font-family:var(--body);font-size:16px;padding:11px 12px;
+    border:1px solid var(--line);border-radius:9px;background:#fff;color:var(--ink);
+  }
+  input:focus{outline:2px solid var(--gray);outline-offset:0;border-color:var(--gray)}
+  .row{display:flex;gap:10px}
+  .row>div{flex:1}
+  .btns{display:flex;gap:9px;margin-top:20px}
+  button.primary{
+    flex:1;background:var(--gray);color:#fff;border:0;border-radius:10px;padding:13px;
+    font-family:var(--display);font-size:15px;font-weight:600;letter-spacing:.06em;
+    text-transform:uppercase;cursor:pointer;
+  }
+  button.primary.meat{background:var(--red)}
+  button.ghost{
+    background:#fff;color:var(--muted);border:1px solid var(--line);border-radius:10px;
+    padding:13px 16px;font-family:var(--body);font-weight:600;font-size:14px;cursor:pointer;
+  }
+  button.danger{color:var(--red-deep);border-color:#EDB6BF}
+  .err{background:#FBE3E7;color:var(--red-deep);font-size:13px;padding:9px 11px;border-radius:8px;margin-top:12px;display:none}
+  .err.on{display:block}
+
+  .note{font-size:12.5px;color:var(--muted);text-align:center;margin:26px 0 0;line-height:1.6}
+  .loading{text-align:center;padding:48px 0;color:var(--muted);font-size:14px}
+  .toast{
+    position:fixed;left:50%;transform:translateX(-50%);bottom:22px;z-index:60;
+    background:var(--ink);color:#fff;font-size:13.5px;font-weight:500;
+    padding:11px 18px;border-radius:999px;opacity:0;pointer-events:none;transition:opacity .2s;
+  }
+  .toast.on{opacity:1}
+  @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="head-in">
+    <div class="crest" id="crest"></div>
+    <div>
+      <p class="eyebrow">Antonian College Preparatory &middot; Apache Football</p>
+      <h1>Senior Family <em>Tailgate 2026</em></h1>
+      <p class="sub">Nine families per game. Two on the grill, seven on everything else. Claim your spot below.</p>
+    </div>
+  </div>
+</header>
+
+<div class="bar">
+  <div class="bar-in">
+    <span id="whoami"></span>
+    <span class="spacer"></span>
+    <button class="linkbtn" id="btn-view">View dashboard</button>
+    <button class="linkbtn" id="btn-share">Share sheet</button>
+    <button class="linkbtn" id="btn-refresh">Refresh</button>
+  </div>
+</div>
+
+<div class="wrap">
+  <div id="board"><div class="loading">Loading the sign&#8209;up sheet&hellip;</div></div>
+  <p class="note">
+    No accounts, no passwords &mdash; anyone with the link can sign up.<br>
+    Please only release a spot that belongs to your family. Questions? Reach out to the senior class parent reps.
+  </p>
+</div>
+
+<div class="veil" id="veil"><div class="sheet" id="sheet"></div></div>
+<div class="toast" id="toast"></div>
+
+<script>
+const KEY = 'antonian-tailgate-2026-clean';
+
+const SIDE_HINT = 'Type in what you will bring: buns, beans, potato salad, chips and queso, dessert, drinks and ice, plates and napkins.';
+const SLOTS = [
+  {id:'p1', kind:'protein', role:'Main protein &mdash; grill',   hint:'Brisket, fajitas, burgers, sausage, chicken. Bring it hot and ready to serve.'},
+  {id:'p2', kind:'protein', role:'Second protein &mdash; grill', hint:'A different meat than slot 1, or a vegetarian main. Coordinate with the other family.'},
+  {id:'s1', kind:'side', role:'Side or setup', hint:SIDE_HINT},
+  {id:'s2', kind:'side', role:'Side or setup', hint:SIDE_HINT},
+  {id:'s3', kind:'side', role:'Side or setup', hint:SIDE_HINT},
+  {id:'s5', kind:'side', role:'Side or setup', hint:SIDE_HINT},
+  {id:'s6', kind:'side', role:'Side or setup', hint:SIDE_HINT},
+  {id:'s7', kind:'side', role:'Side or setup', hint:SIDE_HINT},
+  {id:'s8', kind:'side', role:'Side or setup', hint:SIDE_HINT}
+];
+const PROTEIN_IDS = SLOTS.filter(s=>s.kind==='protein').map(s=>s.id);
+const SLOT_IDS = SLOTS.map(s=>s.id);
+const TOTAL = SLOTS.length;
+const SIDE_COUNT = SLOTS.filter(s=>s.kind==='side').length;
+
+const SEED = {
+  games:[
+    {id:'g1', opp:'Edison',           tag:'',            date:'2026-09-04', time:'', place:''},
+    {id:'g2', opp:'St. Pius',         tag:'',            date:'2026-09-18', time:'', place:''},
+    {id:'g3', opp:'Somerset Academy', tag:'Homecoming',  date:'2026-10-02', time:'', place:''},
+    {id:'g4', opp:'St. Michaels',     tag:'Pink Out',    date:'2026-10-09', time:'', place:''},
+    {id:'g5', opp:'St. Thomas',       tag:'Senior Night',date:'2026-10-23', time:'', place:''}
+  ],
+ signups:{},
+  heads:{},
+  v:4
+};
+
+let state = null;
+let view = /view=dash/.test(location.hash || '') ? 'dash' : 'signup';
+
+/* ---------- crest ---------- */
+function drawCrest(){
+  const el = document.getElementById('crest');
+  el.innerHTML = CREST_SVG;
+}
+const CREST_SVG = '<img alt="Antonian Football" src="data:image/jpeg;base64,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">';
+
+/* ---------- storage ----------
+   Three backends, chosen automatically, none of which require an account:
+   1. cloud  - a public JSON sheet at jsonblob.com, identified in the page link (#sheet=ID).
+               Anyone who opens that link reads and writes the same sheet.
+   2. claude - the built-in shared storage, used when this page runs inside Claude.
+   3. device - this browser only, used when the file is opened straight off a computer.
+------------------------------------------------------------------ */
+const BLOB_API = 'https://jsonblob.com/api/jsonBlob/';
+let mode = 'device';
+let sheetId = '';
+let lastSeen = '';
+
+function hasClaudeStorage(){ return typeof window.storage !== 'undefined' && window.storage; }
+function readHashId(){
+  const m = (location.hash || '').match(/sheet=([A-Za-z0-9_-]+)/);
+  return m ? m[1] : '';
+}
+const SANDBOXED = !/^https?:$/.test(location.protocol) || window.top !== window.self;
+function pageBase(){
+  const saved = lsGet('tailgate-site-url') || '';
+  if(/^https?:\/\//.test(saved)) return saved.split('#')[0];
+  return location.href.split('#')[0];
+}
+function shareLink(dash){
+  return pageBase() + '#sheet=' + sheetId + (dash ? '&view=dash' : '');
+}
+
+/* small local helpers that never throw */
+function lsGet(k){ try{ return localStorage.getItem(k); }catch(e){ return null; } }
+function lsSet(k,v){ try{ localStorage.setItem(k,v); }catch(e){} }
+
+async function readRemote(){
+  if(mode === 'cloud'){
+    const r = await fetch(BLOB_API + sheetId, {headers:{'Accept':'application/json'}});
+    if(!r.ok) throw new Error('read failed');
+    return await r.json();
+  }
+  if(mode === 'claude'){
+    const r = await window.storage.get(KEY, true);
+    return r && r.value ? JSON.parse(r.value) : null;
+  }
+  const raw = lsGet(KEY);
+  return raw ? JSON.parse(raw) : null;
+}
+
+async function writeRemote(data){
+  if(mode === 'cloud'){
+    const r = await fetch(BLOB_API + sheetId, {
+      method:'PUT',
+      headers:{'Content-Type':'application/json','Accept':'application/json'},
+      body: JSON.stringify(data)
+    });
+    if(!r.ok) throw new Error('write failed');
+    return true;
+  }
+  if(mode === 'claude'){
+    const ok = await window.storage.set(KEY, JSON.stringify(data), true);
+    if(!ok) throw new Error('no result');
+    return true;
+  }
+  lsSet(KEY, JSON.stringify(data));
+  return true;
+}
+
+/* Sheets created before the dates were set keep their own copy of the schedule.
+   Bring them up to the current one without touching anyone's sign-ups. */
+async function applySchedule(){
+  if(state.scheduleVersion === SEED.scheduleVersion) return false;
+  let changed = false;
+
+  SEED.games.forEach(seed=>{
+    const g = state.games.find(x=>x.id===seed.id);
+    if(!g){ state.games.push(JSON.parse(JSON.stringify(seed))); changed = true; return; }
+    if(!g.date && seed.date) g.date = seed.date;
+    g.opp = seed.opp;
+    g.tag = seed.tag;
+    if(/opponent TBD/.test(g.opp) && g.opp !== seed.opp){ g.opp = seed.opp; changed = true; }
+  });
+
+  // drop leftover placeholder games that nobody has signed up for
+  const keep = SEED.games.map(g=>g.id);
+  state.games = state.games.filter(g=>{
+    if(keep.indexOf(g.id) !== -1) return true;
+    if(filledCount(g.id) > 0) return true;
+    changed = true;
+    return false;
+  });
+
+  state.scheduleVersion = SEED.scheduleVersion;
+  try{ await writeRemote(state); }catch(e){}
+  return changed;
+}
+
+/* Sheets saved before the schedule was set keep their own copy of the games.
+   Fill in any blank dates from SEED, add games that are missing, and drop
+   leftover placeholder games that nobody has signed up for. */
+async function applySchedule(){
+  if(state.v === SEED.v) return false;
+  let changed = true;
+  if(!state.v || state.v < 3){ state.signups = {}; state.heads = {}; }
+
+  SEED.games.forEach((seed, i)=>{
+    const g = state.games.find(x=>x.id===seed.id);
+    if(!g){
+      state.games.splice(i, 0, JSON.parse(JSON.stringify(seed)));
+      changed = true;
+      return;
+    }
+    if(!g.date && seed.date){ g.date = seed.date; changed = true; }
+  });
+
+  const keepIds = SEED.games.map(g=>g.id);
+  state.games = state.games.filter(g=>{
+    if(keepIds.indexOf(g.id) !== -1) return true;
+    const used = Object.keys(state.signups[g.id] || {}).length > 0;
+    if(!used){ changed = true; return false; }
+    return true;
+  });
+
+  state.v = SEED.v;
+  if(changed){ try{ await writeRemote(state); }catch(e){} }
+  return changed;
+}
+
+async function load(){
+  sheetId = readHashId() || lsGet('tailgate-sheet-id') || '';
+  if(sheetId){ mode = 'cloud'; lsSet('tailgate-sheet-id', sheetId); }
+  else if(hasClaudeStorage()) mode = 'claude';
+  else mode = 'device';
+
+  try{
+    state = await readRemote();
+  }catch(e){
+    state = null;
+    if(mode === 'cloud') toast("Couldn't reach the shared sheet. Check your connection.");
+  }
+  if(!state || !Array.isArray(state.games)) state = JSON.parse(JSON.stringify(SEED));
+  if(!state.signups) state.signups = {};
+  if(!state.heads) state.heads = {};
+  if(await applySchedule()) { /* saved inside */ }
+  lastSeen = JSON.stringify(state);
+
+}
+
+/* re-read before writing so two families saving at once don't overwrite each other */
+async function commit(mutate){
+  let fresh = null;
+  try{ fresh = await readRemote(); }catch(e){}
+  if(fresh && Array.isArray(fresh.games)){
+    fresh.signups = fresh.signups || {};
+    fresh.heads = fresh.heads || {};
+    state = fresh;
+  }
+  mutate(state);
+  let ok = true;
+  try{ await writeRemote(state); }
+  catch(e){ ok = false; toast("Couldn't save. Check your connection and try again."); }
+  lastSeen = JSON.stringify(state);
+  render();
+  return ok;
+}
+
+/* create a public sheet and hand back a link anyone can open */
+async function createSheet(){
+  const r = await fetch(BLOB_API, {
+    method:'POST',
+    headers:{'Content-Type':'application/json','Accept':'application/json'},
+    body: JSON.stringify(state)
+  });
+  const loc = r.headers.get('Location') || r.headers.get('location') || '';
+  const id = loc.split('/').pop();
+  if(!r.ok || !id) throw new Error('create failed');
+  sheetId = id;
+  mode = 'cloud';
+  lsSet('tailgate-sheet-id', id);
+  if(location.protocol !== 'blob:') { try{ history.replaceState(null,'','#sheet='+id); }catch(e){} }
+  return shareLink();
+}
+
+/* pull in other families' changes while the page sits open */
+setInterval(async ()=>{
+  if(mode !== 'cloud') return;
+  if(document.getElementById('veil').classList.contains('on')) return;
+  try{
+    const fresh = await readRemote();
+    if(fresh && Array.isArray(fresh.games)){
+      const str = JSON.stringify(fresh);
+      if(str !== lastSeen){ state = fresh; lastSeen = str; render(); }
+    }
+  }catch(e){}
+}, 20000);
+
+/* ---------- helpers ---------- */
+function esc(s){return String(s==null?'':s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
+function taken(gid,sid){ return (state.signups[gid]||{})[sid] || null; }
+function headEntries(gid){ const h = (state.heads||{})[gid] || {}; return Object.keys(h).map(k=>h[k]); }
+function headTotal(gid){ return headEntries(gid).reduce((n,e)=>n + (parseInt(e.count,10)||0), 0); }
+function slug(name){ return name.trim().toLowerCase().replace(/[^a-z0-9]+/g,'-'); }
+function filledCount(gid){ const g = state.signups[gid]||{}; return SLOT_IDS.filter(id=>g[id]).length; }
+function proteinCount(gid){ return PROTEIN_IDS.filter(id=>taken(gid,id)).length; }
+function fmtDate(d,t){
+  if(!d) return '';
+  const [y,m,dd] = d.split('-').map(Number);
+  const dt = new Date(y, m-1, dd);
+  let s = dt.toLocaleDateString(undefined,{weekday:'short',month:'short',day:'numeric'});
+  if(t){
+    const [hh,mm] = t.split(':').map(Number);
+    const h12 = ((hh+11)%12)+1;
+    s += ' &middot; ' + h12 + ':' + String(mm).padStart(2,'0') + (hh<12?' a.m.':' p.m.');
+  }
+  return s;
+}
+let toastTimer;
+function toast(msg){
+  const el = document.getElementById('toast');
+  el.textContent = msg; el.classList.add('on');
+  clearTimeout(toastTimer); toastTimer = setTimeout(()=>el.classList.remove('on'),2600);
+}
+
+/* ---------- render ---------- */
+function render(){
+  drawCrest();
+  document.getElementById('whoami').innerHTML = mode === 'cloud'
+    ? 'Shared sheet &mdash; anyone with the link can sign up'
+    : (SANDBOXED ? 'Preview only &mdash; host this file to share it' : 'Not shared yet &mdash; press Share sheet');
+
+  document.getElementById('btn-view').textContent = view==='dash' ? 'Back to sign-up' : 'View dashboard';
+
+  const board = document.getElementById('board');
+  board.innerHTML = view==='dash'
+    ? dashboard()
+    : state.games.map((g,i)=>gameCard(g,i)).join('');
+
+  board.querySelectorAll('.slot').forEach(b=>{
+    b.addEventListener('click',()=>openSlot(b.dataset.g,b.dataset.s));
+  });
+  board.querySelectorAll('[data-head]').forEach(b=>{
+    b.addEventListener('click',()=>openHeadCount(b.dataset.head));
+  });
+  board.querySelectorAll('[data-copy]').forEach(b=>{
+    b.addEventListener('click',()=>copyList(b.dataset.copy));
+  });
+}
+
+function gameCard(g,i){
+  const n = filledCount(g.id), p = proteinCount(g.id);
+  const when = fmtDate(g.date,g.time);
+  const bits = [];
+  if(when) bits.push(when);
+  if(g.place) bits.push(esc(g.place));
+  const meta = bits.length ? bits.join('<span class="dot">&bull;</span>') : 'Date and location not set yet';
+
+  const yard = SLOTS.map(s=>{
+    const t = taken(g.id,s.id);
+    if(!t) return '<i></i>';
+    return '<i class="'+(s.kind==='protein'?'meat':'on')+'"></i>';
+  }).join('');
+
+  const chips =
+    (n===TOTAL ? '<span class="chip full">All '+TOTAL+' spots filled</span>'
+               : '<span class="chip count">'+n+' of '+TOTAL+' spots filled</span>') +
+    (p===2 ? '<span class="chip set">Both proteins covered</span>'
+           : '<span class="chip need">'+(2-p)+' protein spot'+(p===1?'':'s')+' still open</span>') +
+    (headTotal(g.id)
+      ? '<span class="chip count">'+headTotal(g.id)+' people coming</span>'
+      : '<span class="chip count" style="opacity:.7">No head count yet</span>');
+
+  return `
+  <section class="game">
+    <div class="game-head">
+      <div class="game-top">
+        <span class="gnum">Game ${i+1}</span>
+        <span class="spacer"></span>
+        <h2 class="opp">${esc(g.opp)}${g.tag?' <span class="tag'+(/pink/i.test(g.tag)?' pink':'')+'">'+esc(g.tag)+'</span>':''}</h2>
+      </div>
+      <p class="when">${meta}
+        <button class="linkbtn" style="border-color:var(--red);color:var(--red-deep);margin-left:6px" data-head="${g.id}">Head count</button>
+        <button class="linkbtn" style="border-color:var(--line);color:var(--muted)" data-copy="${g.id}">Copy list</button>
+      </p>
+      <div class="yard" aria-hidden="true">${yard}</div>
+      <div class="status">${chips}</div>
+    </div>
+
+    <div class="grill">
+      <div class="group-label">On the grill &mdash; 2 families<span class="rule"></span></div>
+      <ul class="slots">${SLOTS.filter(s=>s.kind==='protein').map((s,k)=>slotRow(g.id,s,k+1)).join('')}</ul>
+    </div>
+
+    <div class="sides">
+      <div class="group-label">Sides &amp; setup &mdash; ${SIDE_COUNT} families<span class="rule"></span></div>
+      <ul class="slots">${SLOTS.filter(s=>s.kind==='side').map((s,k)=>slotRow(g.id,s,k+3)).join('')}</ul>
+    </div>
+  </section>`;
+}
+
+function slotRow(gid,s,num){
+  const t = taken(gid,s.id);
+  return `<li><button class="slot ${t?'filled':''}" data-g="${gid}" data-s="${s.id}">
+    <span class="num">${num}</span>
+    <span class="body">
+      <span class="role">${s.role}</span>
+      ${t
+        ? `<span class="taken"><b>${esc(t.family)}</b>${t.item?' &mdash; '+esc(t.item):''}${t.servings?' <span style="color:var(--muted)">&middot; serves '+esc(t.servings)+'</span>':''}</span>`
+        : `<span class="hint">${s.hint}</span><span class="open">${s.kind==='side'?'Open &mdash; add your item':'Open'}</span>`}
+    </span>
+    <span class="act">${t?'Details':'Sign up'}</span>
+  </button></li>`;
+}
+
+/* ---------- dashboard ---------- */
+function dashboard(){
+  const games = state.games;
+  let filled = 0, proteins = 0, servings = 0, expected = 0;
+  const families = new Set();
+  const short = [];
+
+  games.forEach(g=>{
+    filled += filledCount(g.id);
+    proteins += proteinCount(g.id);
+    SLOT_IDS.forEach(id=>{
+      const t = taken(g.id,id);
+      if(t){
+        if(t.family) families.add(t.family.trim().toLowerCase());
+        if(t.servings && PROTEIN_IDS.indexOf(id) !== -1) servings += parseInt(t.servings,10) || 0;
+      }
+    });
+    expected += headTotal(g.id);
+    if(proteinCount(g.id) < 2) short.push(g);
+  });
+
+  const capacity = games.length * TOTAL;
+  const proteinCap = games.length * 2;
+
+  const alert = short.length
+    ? `<div class="alert"><b>Still needs a grill family</b>${
+        short.map(g=>esc(g.opp)+' &mdash; '+(2-proteinCount(g.id))+' of 2 open').join('<br>')
+      }</div>`
+    : `<div class="alert" style="background:#ECECEF;border-color:var(--line);color:var(--gray)"><b>Grill is covered</b>Every tailgate has both protein families signed up.</div>`;
+
+  const cards = games.map((g,i)=>{
+    const n = filledCount(g.id), p = proteinCount(g.id);
+    const bits = [];
+    const when = fmtDate(g.date,g.time);
+    if(when) bits.push(when);
+    if(g.place) bits.push(esc(g.place));
+
+    const yard = SLOTS.map(sl=>{
+      const t = taken(g.id,sl.id);
+      return t ? '<i class="'+(sl.kind==='protein'?'meat':'on')+'"></i>' : '<i></i>';
+    }).join('');
+
+    const meatRows = SLOTS.filter(x=>x.kind==='protein').map(sl=>{
+      const t = taken(g.id,sl.id);
+      return '<li>' + (t
+        ? '<b>'+esc(t.item || 'Protein')+'</b>'+(t.servings?' <span class="who">&middot; serves '+esc(t.servings)+'</span>':'')+'<br><span class="who">'+esc(t.family)+'</span>'
+        : '<span class="gap">Open &mdash; needs a family</span>') + '</li>';
+    }).join('');
+
+    const sideRows = SLOTS.filter(x=>x.kind==='side').map((sl,k)=>{
+      const t = taken(g.id,sl.id);
+      return '<li>' + (t
+        ? '<b>'+esc(t.item)+'</b>'+(t.servings?' <span class="who">&middot; serves '+esc(t.servings)+'</span>':'')+'<br><span class="who">'+esc(t.family)+'</span>'
+        : '<span class="gap quiet">Spot '+(k+1)+' open</span>') + '</li>';
+    }).join('');
+
+    return `
+    <section class="dcard">
+      <div class="dcard-top">
+        <h3>${esc(g.opp)}${g.tag?' <span class="tag'+(/pink/i.test(g.tag)?' pink':'')+'">'+esc(g.tag)+'</span>':''}</h3>
+        <p class="when">${bits.length?bits.join('<span class="dot">&bull;</span>'):'Date not set'}</p>
+        <button class="linkbtn" style="border-color:var(--line);color:var(--muted)" data-copy="${g.id}">Copy list</button>
+      </div>
+      <div style="padding:12px 16px 0">
+        <div class="yard" aria-hidden="true" style="margin-top:0">${yard}</div>
+        <div class="status">${
+          (n===TOTAL?'<span class="chip full">All '+TOTAL+' spots filled</span>'
+                   :'<span class="chip count">'+n+' of '+TOTAL+' spots filled</span>')+
+          (p===2?'<span class="chip set">Both proteins covered</span>'
+                :'<span class="chip need">'+(2-p)+' protein spot'+(p===1?'':'s')+' open</span>')+
+          (headTotal(g.id)?'<span class="chip count">'+headTotal(g.id)+' people coming from '+headEntries(g.id).length+' families</span>'
+                          :'<span class="chip count" style="opacity:.7">No head count yet</span>')
+        }</div>
+      </div>
+      <div class="dgrid">
+        <div class="dcol meat"><h4>On the grill</h4><ul class="dlist">${meatRows}</ul></div>
+        <div class="dcol"><h4>Sides &amp; setup</h4><ul class="dlist">${sideRows}</ul></div>
+      </div>
+    </section>`;
+  }).join('');
+
+  return `
+    <div class="dash-head">
+      <h2>Season at a glance</h2>
+      <span>Updates on its own every 20 seconds</span>
+    </div>
+    <div class="stats">
+      <div class="stat"><b>${filled}<span style="font-size:15px;color:var(--muted)">/${capacity}</span></b><span>Spots filled across ${games.length} tailgates</span></div>
+      <div class="stat"><b class="${proteins<proteinCap?'warn':''}">${proteins}<span style="font-size:15px;color:var(--muted)">/${proteinCap}</span></b><span>Grill families signed up</span></div>
+      <div class="stat"><b>${families.size}</b><span>Senior families pitching in</span></div>
+      <div class="stat"><b>${servings||'&mdash;'}</b><span>People the proteins will feed</span></div>
+      <div class="stat"><b>${expected||'&mdash;'}</b><span>People families expect to bring, all games</span></div>
+    </div>
+    ${alert}
+    ${cards}`;
+}
+
+/* ---------- modal ---------- */
+const veil = document.getElementById('veil');
+const sheet = document.getElementById('sheet');
+function closeSheet(){ veil.classList.remove('on'); sheet.innerHTML=''; }
+veil.addEventListener('click',e=>{ if(e.target===veil) closeSheet(); });
+document.addEventListener('keydown',e=>{ if(e.key==='Escape') closeSheet(); });
+function openSheet(html, focusSel){
+  sheet.innerHTML = html;
+  veil.classList.add('on');
+  const f = focusSel ? sheet.querySelector(focusSel) : null;
+  if(f) f.focus();
+}
+function showErr(msg){
+  const e = sheet.querySelector('.err');
+  if(e){ e.textContent = msg; e.classList.add('on'); }
+}
+
+function openSlot(gid,sid){
+  const g = state.games.find(x=>x.id===gid);
+  const s = SLOTS.find(x=>x.id===sid);
+  const t = taken(gid,sid);
+  const meat = s.kind==='protein';
+  const ctx = esc(g.opp) + (g.date? ' &middot; ' + fmtDate(g.date,'') : '');
+
+  if(t){
+    openSheet(`
+      <h2>${s.role}</h2>
+      <p class="ctx">${ctx}</p>
+      <p style="font-size:15px;margin:0 0 4px"><b>${esc(t.family)}</b> has this spot.</p>
+      ${t.item?`<p style="font-size:15px;margin:0 0 4px">Bringing: ${esc(t.item)}</p>`:''}
+      ${t.servings?`<p style="font-size:15px;margin:0 0 4px">Serves about ${esc(t.servings)}</p>`:''}
+      <p class="ctx" style="margin-top:12px">${s.hint}</p>
+      <div class="btns">
+        <button class="ghost" id="x">Close</button>
+        <button class="ghost danger" id="rel" style="flex:1">Release this spot</button>
+      </div>`);
+    sheet.querySelector('#x').onclick = closeSheet;
+    sheet.querySelector('#rel').onclick = async ()=>{
+      if(!confirm('Release this spot for '+t.family+'? Another family will be able to claim it.')) return;
+      const ok = await commit(st=>{ if(st.signups[gid]) delete st.signups[gid][sid]; });
+      closeSheet(); if(ok) toast('Spot released.');
+    };
+    return;
+  }
+
+  openSheet(`
+    <h2>${s.role}</h2>
+    <p class="ctx">${ctx}</p>
+    <p style="font-size:14px;color:var(--muted);margin:0">${s.hint}</p>
+    <label for="fam">Family name</label>
+    <input type="text" id="fam" placeholder="Your family name" autocomplete="off">
+    <label for="item">What you're bringing</label>
+    <input type="text" id="item" placeholder="${meat?'Two briskets, sliced':'Charro beans, two large pans'}" autocomplete="off">
+    <label for="srv">How many people it serves</label>
+    <input type="number" id="srv" min="1" step="1" inputmode="numeric" autocomplete="off">
+    <div class="err"></div>
+    <div class="btns">
+      <button class="ghost" id="x">Cancel</button>
+      <button class="primary ${meat?'meat':''}" id="go">Claim this spot</button>
+    </div>`, '#fam');
+
+  sheet.querySelector('#x').onclick = closeSheet;
+  sheet.querySelector('#go').onclick = async ()=>{
+    const fam = sheet.querySelector('#fam').value.trim();
+    if(!fam){ showErr('Add your family name so everyone knows who has this spot.'); return; }
+    const item = sheet.querySelector('#item').value.trim();
+    if(!meat && !item){ showErr('Type in what you are bringing so no one doubles up.'); return; }
+    const srvEl = sheet.querySelector('#srv');
+    const servings = srvEl ? srvEl.value.trim() : '';
+    if(!servings){ showErr('Add how many people your dish serves so everything lines up.'); return; }
+    let clash = false;
+    const ok = await commit(st=>{
+      st.signups[gid] = st.signups[gid] || {};
+      if(st.signups[gid][sid]){ clash = true; return; }
+      st.signups[gid][sid] = {family:fam,item:item,servings:servings,ts:Date.now()};
+    });
+    if(clash){ closeSheet(); toast('Another family just claimed that one. Pick a different spot.'); return; }
+    closeSheet(); if(ok) toast("You're in. Thanks, "+fam+".");
+  };
+}
+
+function openHeadCount(gid){
+  const g = state.games.find(x=>x.id===gid);
+  const list = headEntries(gid).sort((a,b)=>a.family.localeCompare(b.family));
+  const roster = list.length
+    ? '<ul class="dlist" style="margin-top:6px">' + list.map(e=>
+        '<li style="display:flex;align-items:center;gap:8px"><b style="flex:1">'+esc(e.family)+
+        '</b><span class="who">'+esc(String(e.count))+'</span>'+
+        '<button class="linkbtn" style="border-color:var(--line);color:var(--muted)" data-drop="'+esc(slug(e.family))+'">Remove</button></li>').join('') + '</ul>'
+    : '<p class="ctx" style="margin:6px 0 0">No family has answered yet. Be the first.</p>';
+
+  openSheet(`
+    <h2>Head count</h2>
+    <p class="ctx">${esc(g.opp)}${g.date? ' &middot; ' + fmtDate(g.date,'') : ''}</p>
+    <p style="font-size:14px;color:var(--muted);margin:0">How many people is your family bringing? This is what the grill families cook to.</p>
+    <label for="fam">Family name</label>
+    <input type="text" id="fam" placeholder="Your family name" autocomplete="off">
+    <label for="cnt">People coming</label>
+    <input type="number" id="cnt" min="0" step="1" inputmode="numeric" autocomplete="off">
+    <div class="err"></div>
+    <div class="btns">
+      <button class="ghost" id="x">Cancel</button>
+      <button class="primary" id="go">Add my count</button>
+    </div>
+    <div style="margin-top:20px;border-top:1px solid var(--line);padding-top:14px">
+      <h4 style="font-family:var(--display);font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin:0">
+        Counted so far &mdash; ${headTotal(gid)} people
+      </h4>
+      ${roster}
+    </div>`, '#fam');
+
+  sheet.querySelector('#x').onclick = closeSheet;
+  sheet.querySelector('#go').onclick = async ()=>{
+    const fam = sheet.querySelector('#fam').value.trim();
+    const cnt = sheet.querySelector('#cnt').value.trim();
+    if(!fam){ showErr('Add your family name so the count is not double-entered.'); return; }
+    if(cnt === '' || isNaN(parseInt(cnt,10))){ showErr('Enter how many people are coming.'); return; }
+    const ok = await commit(st=>{
+      st.heads = st.heads || {};
+      st.heads[gid] = st.heads[gid] || {};
+      st.heads[gid][slug(fam)] = {family:fam, count:parseInt(cnt,10), ts:Date.now()};
+    });
+    closeSheet(); if(ok) toast('Head count saved.');
+  };
+  sheet.querySelectorAll('[data-drop]').forEach(b=>{
+    b.onclick = async ()=>{
+      const k = b.dataset.drop;
+      const ok = await commit(st=>{ if(st.heads && st.heads[gid]) delete st.heads[gid][k]; });
+      closeSheet(); if(ok) toast('Count removed.');
+    };
+  });
+}
+
+function copyText(text, msg){
+  const done = ()=>toast(msg);
+  if(navigator.clipboard && navigator.clipboard.writeText){
+    navigator.clipboard.writeText(text).then(done).catch(()=>fallbackCopy(text,done));
+  } else fallbackCopy(text,done);
+}
+function copyList(gid){
+  const g = state.games.find(x=>x.id===gid);
+  const lines = [g.opp + (g.tag? ' — '+g.tag : '') + (g.date? ' — '+fmtDate(g.date,g.time).replace(/&middot;/g,'·').replace(/&nbsp;/g,' ') : ''), ''];
+  SLOTS.forEach(s=>{
+    const t = taken(gid,s.id);
+    let role = s.role.replace(/&mdash;/g,'—');
+    if(s.kind==='side') role += ' ' + (SLOTS.filter(x=>x.kind==='side').indexOf(s)+1);
+    let val = 'OPEN';
+    if(t){
+      val = t.family + (t.item? ' ('+t.item+')' : '') + (t.servings? ' — serves '+t.servings : '');
+    }
+    lines.push(role + ': ' + val);
+  });
+  const heads = headTotal(gid);
+  if(heads) lines.push('', 'Head count: ' + heads + ' people from ' + headEntries(gid).length + ' families');
+  const text = lines.join('\n');
+  const done = ()=>toast('List copied. Paste it into your group text.');
+  if(navigator.clipboard && navigator.clipboard.writeText){
+    navigator.clipboard.writeText(text).then(done).catch(()=>fallbackCopy(text,done));
+  } else fallbackCopy(text,done);
+}
+function fallbackCopy(text,done){
+  const ta = document.createElement('textarea');
+  ta.value = text; ta.style.position='fixed'; ta.style.opacity='0';
+  document.body.appendChild(ta); ta.select();
+  try{ document.execCommand('copy'); done(); }catch(e){ toast('Copy not available on this device.'); }
+  document.body.removeChild(ta);
+}
+
+/* ---------- toolbar ---------- */
+document.getElementById('btn-view').onclick = ()=>{
+  view = view==='dash' ? 'signup' : 'dash';
+  try{
+    const base = sheetId ? '#sheet='+sheetId : '#';
+    history.replaceState(null,'', base + (view==='dash' ? (sheetId?'&':'')+'view=dash' : ''));
+  }catch(e){}
+  render();
+  window.scrollTo({top:0,behavior:'auto'});
+};
+
+document.getElementById('btn-share').onclick = ()=>{
+  const hostHelp = `
+    <div class="alert" style="margin-top:0">
+      <b>This page needs a home first</b>
+      A shared sheet lives at a web address. This preview cannot reach the outside, so put the file on a free host, open it there, then publish.
+      <br><br>
+      1. Go to <b>app.netlify.com/drop</b><br>
+      2. Drag this HTML file onto the page<br>
+      3. Netlify gives you an address &mdash; open the sheet there<br>
+      4. Press Share sheet again and publish
+    </div>`;
+
+  if(mode === 'cloud'){
+    openSheet(`
+      <h2>Share this sheet</h2>
+      <p class="ctx">Send this link to the senior families. It opens straight to the sign&#8209;up sheet &mdash; no account, no password.</p>
+      <label for="lk">Link</label>
+      <input type="text" id="lk" value="${esc(shareLink())}" readonly onclick="this.select()">
+      <div class="btns">
+        <button class="ghost" id="x">Close</button>
+        <button class="primary" id="go">Copy link</button>
+      </div>
+      <div class="btns" style="margin-top:9px"><button class="ghost" id="dash" style="flex:1">Copy dashboard link</button></div>
+      <p class="ctx" style="margin:18px 0 0">Link pointing at the wrong place? Paste the address where this page is hosted and it will be used instead.</p>
+      <label for="site">Page address</label>
+      <input type="text" id="site" value="${esc(lsGet('tailgate-site-url')||'')}" placeholder="https://your-site.netlify.app/tailgate.html" autocomplete="off">
+      <div class="btns" style="margin-top:9px"><button class="ghost" id="setsite" style="flex:1">Use this address</button></div>`, '#lk');
+    sheet.querySelector('#x').onclick = closeSheet;
+    sheet.querySelector('#go').onclick = ()=>{ copyText(shareLink(), 'Link copied. Paste it into your group text.'); closeSheet(); };
+    sheet.querySelector('#dash').onclick = ()=>{ copyText(shareLink(true), 'Dashboard link copied.'); closeSheet(); };
+    sheet.querySelector('#setsite').onclick = ()=>{
+      const v = sheet.querySelector('#site').value.trim();
+      if(v && !/^https?:\/\//.test(v)){ toast('Start the address with https://'); return; }
+      lsSet('tailgate-site-url', v);
+      closeSheet(); toast(v ? 'Address saved. Copy the link again.' : 'Address cleared.');
+    };
+    return;
+  }
+
+  openSheet(`
+    <h2>Share this sheet</h2>
+    ${SANDBOXED ? hostHelp : '<p class="ctx">Publish once and you get a plain link any family can open and sign up on &mdash; nothing to install, no account to create.</p>'}
+    <div class="err"></div>
+    <div class="btns">
+      <button class="ghost" id="x">Close</button>
+      <button class="primary" id="go">Publish and get link</button>
+    </div>
+    <p class="ctx" style="margin:18px 0 0">Already have a link from someone else? Paste it below to join that sheet.</p>
+    <label for="jn">Existing link</label>
+    <input type="text" id="jn" placeholder="https://…#sheet=1234" autocomplete="off">
+    <div class="btns"><button class="ghost" id="join" style="flex:1">Join that sheet</button></div>`);
+
+  sheet.querySelector('#x').onclick = closeSheet;
+  sheet.querySelector('#go').onclick = async (ev)=>{
+    ev.target.disabled = true; ev.target.textContent = 'Publishing…';
+    try{
+      const link = await createSheet();
+      openSheet(`
+        <h2>Sheet published</h2>
+        <p class="ctx">Anyone with this link can open the sheet and claim a spot. Save it somewhere &mdash; it is the only way back to these sign&#8209;ups.</p>
+        <label for="lk">Link</label>
+        <input type="text" id="lk" value="${esc(link)}" readonly onclick="this.select()">
+        <div class="btns">
+          <button class="ghost" id="x2">Close</button>
+          <button class="primary" id="go2">Copy link</button>
+        </div>`, '#lk');
+      sheet.querySelector('#x2').onclick = closeSheet;
+      sheet.querySelector('#go2').onclick = ()=>{ copyText(link,'Link copied. Paste it into your group text.'); closeSheet(); };
+      render();
+    }catch(e){
+      ev.target.disabled = false; ev.target.textContent = 'Publish and get link';
+      showErr(SANDBOXED
+        ? 'This preview cannot reach the outside, so it cannot publish. Host the file first using the steps above.'
+        : "Couldn't publish the sheet. Check your connection and try again in a minute.");
+    }
+  };
+  sheet.querySelector('#join').onclick = async ()=>{
+    const v = sheet.querySelector('#jn').value.trim();
+    const m = v.match(/sheet=([A-Za-z0-9_-]+)/) || v.match(/^([0-9]{6,})$/);
+    if(!m){ showErr('That does not look like a sheet link. It should end in #sheet= followed by a number.'); return; }
+    sheetId = m[1]; mode = 'cloud'; lsSet('tailgate-sheet-id', sheetId);
+    try{ history.replaceState(null,'','#sheet='+sheetId); }catch(e){}
+    await load(); closeSheet(); render(); toast('Joined the shared sheet.');
+  };
+};
+
+document.getElementById('btn-refresh').onclick = async ()=>{
+  await load(); render(); toast('Sheet refreshed.');
+};
+
+/* ---------- boot ---------- */
+(async function(){
+  await load();
+  render();
+})();
+</script>
+</body>
+</html>
